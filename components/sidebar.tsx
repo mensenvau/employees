@@ -13,7 +13,7 @@ interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
 let data = [{
   name: "Basic",
   menu: [{
-    name: "Dashboard",
+    name: "Bosh sahifa",
     path: "",
     icon: <DashboardIcon className="mr-2" />
   }, {

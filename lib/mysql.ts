@@ -24,8 +24,8 @@ let getRow = async (query: any, params: any): Promise<RowDataPacket[]> => {
 
 let insertQuery = async (query: any, params: any): Promise<ResultSetHeader> => {
     try {
-        let res = (await pool.query<ResultSetHeader[]>(query, params))
-        return res[0][0];
+        let res = (await pool.query<ResultSetHeader>(query, params))
+        return res[0];
     } catch (err: any) {
         throw new Error("Server error, MYSQL has an error!, " + err.message);
     }

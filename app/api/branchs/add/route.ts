@@ -1,6 +1,5 @@
 
-import { checkAuth, encode } from "@/lib/jwt";
-import { getRow, insertQuery } from "@/lib/mysql";
+import { insertQuery } from "@/lib/mysql";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {

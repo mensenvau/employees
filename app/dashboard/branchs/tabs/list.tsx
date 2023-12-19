@@ -67,11 +67,11 @@ export function ListTab() {
     })
 
     const getList = async () => {
-        setData((await getRequest("branchs", {}))?.data?.arr || []);
+        setData((await getRequest("branchs", {}))?.arr || []);
     }
 
     let deleteOne = async (id: string) => {
-        const res = (await postRequest("/doctors/delete", { id }))
+        const res = (await postRequest("/branchs/delete", { id }))
         if (res.err) {
             return toast({ variant: "destructive", title: "Uh oh! Something went wrong.", description: "Sorry, the can't delete data!" })
         }
@@ -83,7 +83,7 @@ export function ListTab() {
     return (
         <div className="w-full">
             <div className="flex items-center justify-between">
-                <p className="text-sm"> Branchs data and management.</p>
+                <p className="text-sm"> Bo'limlar ma'lumotlari va boshqaruvi. </p>
             </div>
             <Separator className="my-4" />
             <div className="flex items-center py-4">

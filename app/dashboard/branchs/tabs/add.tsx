@@ -23,7 +23,7 @@ export function AddTab() {
     return (
         <div className="w-full">
             <div className="flex items-center justify-between">
-                <p className="text-sm"> Add a new doctor  </p>
+                <p className="text-sm"> Yangi bo'lim qo'shish.  </p>
             </div>
             <Separator className="my-4" />
             <div className="grid grid-cols-6 gap-4">

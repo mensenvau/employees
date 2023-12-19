@@ -8,5 +8,6 @@ export type Employee = {
 }
 
 export type Branch = {
-    id: string
+    id: string,
+    name: string
 }

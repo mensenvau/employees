@@ -10,7 +10,7 @@ export default async function TabsLayout() {
                 <Tabs defaultValue="list" className="h-full space-y-6">
                     <div className="space-between flex items-center">
                         <TabsList>
-                            <TabsTrigger value="list" className="relative"> Lists</TabsTrigger>
+                            <TabsTrigger value="list" className="relative"> Lists </TabsTrigger>
                             <TabsTrigger value="add" className="relative">  Add new </TabsTrigger>
                         </TabsList>
                     </div>

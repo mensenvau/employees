@@ -8,6 +8,6 @@ export async function GET(req: NextRequest) {
         let arr = await getRow("SELECT * FROM branchs", [])
         return NextResponse.json({ message: "ok", arr });
     } catch {
-        return NextResponse.json({ message: "User not found!" }, { status: 404 });
+        return NextResponse.json({ message: "User not found!" }, { status: 405 });
     }
 }

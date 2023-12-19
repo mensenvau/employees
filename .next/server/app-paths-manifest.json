@@ -1,7 +1,8 @@
 {
   "/not-found": "app/not-found.js",
-  "/api/auth/route": "app/api/auth/route.js",
+  "/api/branchs/one/route": "app/api/branchs/one/route.js",
   "/api/branchs/route": "app/api/branchs/route.js",
   "/dashboard/branchs/page": "app/dashboard/branchs/page.js",
-  "/dashboard/branchs/[id]/page": "app/dashboard/branchs/[id]/page.js"
+  "/dashboard/branchs/[id]/page": "app/dashboard/branchs/[id]/page.js",
+  "/dashboard/employees/page": "app/dashboard/employees/page.js"
 }

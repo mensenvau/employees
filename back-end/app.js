@@ -12,7 +12,7 @@ app.use(express.json())
 
 app.use(express.static('public'))
 app.use(fileUpload({ limits: { fileSize: 50 * 1024 * 1024 }, }))
-app.use(cors({ origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "https://medreyting.uz"], optionsSuccessStatus: 200 }))
+app.use(cors({ origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "https://mi.mycontest.dev"], optionsSuccessStatus: 200 }))
 
 app.use("/api", require("./routes/main"))
 

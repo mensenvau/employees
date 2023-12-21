@@ -35,7 +35,7 @@ export function ListTab() {
         }, {
             accessorKey: "days",
             header: ({ column }) => (<Button variant="ghost" className="p-0" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")} >Ogohlantirish <CaretSortIcon className="ml-2 h-4 w-4" /></Button>),
-            cell: ({ row }) => (<div className={(parseInt(row.getValue("days")) < 10) ? "text-rose-700" : "text-green-500"}> {row.getValue("days")} kun qoldi!</div>)
+            cell: ({ row }) => (<div className={(parseInt(row.getValue("days")) < 10) ? "text-rose-700" : "text-green-500"}> {parseInt(row.getValue("days")) >= 0 ? `${parseInt(row.getValue("days"))} Kun qoldi!` : "Faol emas!"} </div>)
         }, {
             id: "actions", enableHiding: false, cell: ({ row }) => {
                 const rw = row.original
@@ -97,7 +97,7 @@ export function ListTab() {
             <div className="flex items-center py-4">
                 <Input
                     value={(table.getColumn("full_name")?.getFilterValue() as string) ?? ""}
-                    onChange={(event) => table.getColumn("name")?.setFilterValue(event.target.value)}
+                    onChange={(event) => table.getColumn("full_name")?.setFilterValue(event.target.value)}
                     placeholder="Filter name ..."
                     className="max-w-sm"
                 />

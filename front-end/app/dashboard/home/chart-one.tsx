@@ -9,10 +9,7 @@ export function ChartOne() {
 
     const [data, setData] = useState<any>({})
 
-    const getList = async () => {
-        setData((await getRequest("employees/analiz", {})) || []);
-    }
-
+    const getList = async () => { setData((await getRequest("employees/analiz", {})) || []); }
     useEffect(() => { getList(); }, [])
 
     return (
@@ -26,7 +23,7 @@ export function ChartOne() {
                         <FunnelChart width={730} height={500}>
                             <Tooltip />
                             <Funnel dataKey="count" data={data?.arr1} isAnimationActive  >
-                                <LabelList position="right" fill="#000" stroke="none" dataKey="name" />
+                                <LabelList position="center" fill="#000" stroke="none" dataKey="name" />
                             </Funnel>
                         </FunnelChart>
                     </ResponsiveContainer>

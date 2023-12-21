@@ -83,3 +83,17 @@ export async function deleteRequest(url = "", data = {}) {
     return { err: 1, status: err.message }
   }
 }
+
+export async function downloadRequest(url = "", data = {}) {
+  return await fetch(`${base_url}/api/${url}`, {
+    method: "GET",
+    mode: "cors",
+    cache: "no-cache",
+    redirect: "follow",
+    referrerPolicy: "no-referrer",
+    headers: {
+      "Content-Type": "application/json",
+      "token": localStorage?.getItem("token") || ""
+    }
+  })
+}

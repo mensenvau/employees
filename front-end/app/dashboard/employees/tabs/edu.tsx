@@ -85,7 +85,7 @@ export default function EduTab() {
                                 <TableRow>
                                     <TableHead> #</TableHead>
                                     <TableHead> Oliygoh</TableHead>
-                                    <TableHead >Diplom raqam</TableHead>
+                                    <TableHead >Diplom raqami</TableHead>
                                     <TableHead >Muassasislik</TableHead>
                                     <TableHead >Yillar</TableHead>
                                     <TableHead >Method</TableHead>

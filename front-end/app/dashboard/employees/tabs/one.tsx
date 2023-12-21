@@ -16,7 +16,7 @@ export function EditOneTab() {
 
     const params = useParams()
     const { toast } = useToast()
-    const [input, setInput] = useState<any>({ "id": 0, "branch_id": "", "full_name": "", "workplace": "", "position_held": "", "passport_serial": "", "passport_number": "", "passport_day": "", "birth_place": "", "birth_day": "", "address": "", "ins": "", "inn": "", "phone_number": "", "work_experience": "", "contract_number": "", "contract_day": "", "comment": "", "employment_start_day": "", "employment_end_day": "" })
+    const [input, setInput] = useState<any>({ "id": 0, "branch_id": "", "full_name": "", "workplace": "", "position_held": "", "passport_serial": "", "passport_number": "", "passport_day": "", "birth_place": "", "birth_day": "", "address": "", "ins": "", "inn": "", "phone_number": "", "work_experience": "", "contract_number": "", "contract_day": "", "comment": "", "employment_start_day": "", "employment_end_day": "", "military": "", "passport_address": "", "nation": "" })
     const [branchs, setBranch] = useState<any>([])
     const [load, setLoad] = useState(true)
 
@@ -98,7 +98,7 @@ export function EditOneTab() {
                     </div>
                     <div className="grid grid-cols-6 gap-4 w-full mt-4">
                         <div className="col-span-2" >
-                            <Label htmlFor='name'>Ish joyi:</Label>
+                            <Label htmlFor='name'>Ish ma'lumoti:</Label>
                             <Textarea placeholder="Ish joyi" name="workplace" value={input?.workplace || ""} onChange={onChange} />
                         </div>
                         <div className="col-span-2" >
@@ -120,7 +120,16 @@ export function EditOneTab() {
                             <Input type="date" placeholder="Passport olingan kuni" name="passport_day" value={input?.passport_day || ""} onChange={onChange} />
                         </div>
                     </div>
-
+                    <div className="grid grid-cols-6 gap-4 w-full mt-4">
+                        <div className="col-span-2" >
+                            <Label htmlFor='name'>Passport olingan joyi:</Label>
+                            <Input type="text" placeholder="Passport olingan joyi" name="passport_address" value={input?.passport_address || ""} onChange={onChange} />
+                        </div>
+                        <div className="col-span-2" >
+                            <Label htmlFor='name'>Millati:</Label>
+                            <Input type="text" placeholder="Millati" name="nation" value={input?.nation || ""} onChange={onChange} />
+                        </div>
+                    </div>
                     <div className="grid grid-cols-6 gap-4 w-full mt-4">
                         <div className="col-span-2" >
                             <Label htmlFor='name'>Tug'ilgan joyi:</Label>
@@ -182,11 +191,14 @@ export function EditOneTab() {
 
                     <div className="grid grid-cols-6 gap-4 w-full mt-4">
                         <div className="col-span-2" >
+                            <Label htmlFor='name'>Harbiy bilet:</Label>
+                            <Input type="text" placeholder="Harbiy bilet" name="military" value={input?.military || ""} onChange={onChange} />
+                        </div>
+                        <div className="col-span-2" >
                             <Label htmlFor='name'>Izoh:</Label>
                             <Textarea placeholder="Izoh" name="comment" value={input?.comment || ""} onChange={onChange} />
                         </div>
                     </div>
-
                     <div><Button className="mt-4" onClick={editOne}>Edit Data</Button></div>
                 </div>
             }

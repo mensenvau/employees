@@ -1,1 +1,0 @@
-id: 0, branch_id, full_name, workplace, position_held, passport_serial, passport_number, passport_day, birth_place, birth_day, address, ins, inn, phone_number, work_experience, contract_number, contract_day, comment, employment_start_day, employment_end_day

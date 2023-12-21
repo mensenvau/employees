@@ -22,17 +22,20 @@ export function ListTab() {
             cell: ({ row }) => (<div className="capitalize">{row.getValue("id")}</div>),
         }, {
             accessorKey: "full_name",
-            header: ({ column }) => (
-                <Button variant="ghost" className="p-0" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")} > To'liq ism familyasi <CaretSortIcon className="ml-2 h-4 w-4" />  </Button>
-            ), cell: ({ row }) => (
-                <div className="lowercase">
-                    <Link href={`/dashboard/employees/${row.original?.id}`} className="underline underline-offset-1">{row.getValue("full_name")}</Link>
-                </div>
-            )
+            header: ({ column }) => (<Button variant="ghost" className="p-0" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")} > To'liq ism familyasi <CaretSortIcon className="ml-2 h-4 w-4" />  </Button>),
+            cell: ({ row }) => (<div className="lowercase"><Link href={`/dashboard/employees/${row.original?.id}`} className="underline underline-offset-1">{row.getValue("full_name")}</Link></div>)
+        }, {
+            accessorKey: "branch_name",
+            header: () => <div>Bo'lim nomi</div>,
+            cell: ({ row }) => (<div >{row.getValue("branch_name")}</div>)
         }, {
             accessorKey: "workplace",
             header: () => <div>Ish joyi</div>,
             cell: ({ row }) => (<div >{row.getValue("workplace")}</div>)
+        }, {
+            accessorKey: "days",
+            header: ({ column }) => (<Button variant="ghost" className="p-0" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")} >Ogohlantirish <CaretSortIcon className="ml-2 h-4 w-4" /></Button>),
+            cell: ({ row }) => (<div className={(parseInt(row.getValue("days")) < 10) ? "text-rose-700" : "text-green-500"}> {row.getValue("days")} kun qoldi!</div>)
         }, {
             id: "actions", enableHiding: false, cell: ({ row }) => {
                 const rw = row.original
@@ -48,7 +51,7 @@ export function ListTab() {
                             <DropdownMenuLabel>Actions</DropdownMenuLabel>
                             <DropdownMenuItem onClick={() => navigator.clipboard.writeText(rw?.id)} > Copy ID</DropdownMenuItem>
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem onClick={() => { router.push(`/dashboard/doctors/${rw?.id}`) }}>Edit</DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => { router.push(`/dashboard/employees/${rw?.id}`) }}>Edit</DropdownMenuItem>
                             <DropdownMenuItem onClick={() => { deleteOne(rw?.id) }}>Delete</DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>

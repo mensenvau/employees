@@ -1,7 +1,7 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/ui/tabs";
 import { ChartOne } from "./home/chart-one";
-import { ChartTwo } from "./home/chart-two";
+import { HelpTab } from "./home/help";
 
 export default async function Home() {
   return (
@@ -11,11 +11,11 @@ export default async function Home() {
           <div className="space-between flex items-center">
             <TabsList>
               <TabsTrigger value="list" className="relative"> Analiz </TabsTrigger>
-              <TabsTrigger value="add" className="relative">  Anliz chart </TabsTrigger>
+              <TabsTrigger value="help" className="relative">  Help </TabsTrigger>
             </TabsList>
           </div>
           <TabsContent value="list" className="border-none p-0 outline-none"> <ChartOne /> </TabsContent>
-          <TabsContent value="add" className="border-none p-0 outline-none">  <ChartTwo /> </TabsContent>
+          <TabsContent value="help" className="border-none p-0 outline-none"><HelpTab />   </TabsContent>
         </Tabs>
       </div>
     </div>

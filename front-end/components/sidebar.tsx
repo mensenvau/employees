@@ -42,7 +42,7 @@ export function Sidebar({ path }: SidebarProps) {
   let router = useRouter();
   let authAccess = async () => {
     let res = (await getRequest("auth"))
-    if (res && res?.status == 405) router.push("/")
+    if (res && res?.status == 401) router.push("/")
   }
 
   useEffect(() => { authAccess(); }, [])

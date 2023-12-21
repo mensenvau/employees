@@ -84,10 +84,7 @@ export function ListTab() {
         await getList()
     }
 
-    useEffect(() => {
-        getList();
-        table.setPageSize(30);
-    }, [])
+    useEffect(() => { getList(); table.setPageSize(30); }, [])
 
     return (
         <div className="w-full">

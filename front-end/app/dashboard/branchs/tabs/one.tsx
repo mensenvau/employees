@@ -27,7 +27,7 @@ export function EditOneTab() {
         const res = (await postRequest("branchs/one", { ...input }))
         if (res.err)
             return toast({ variant: "destructive", title: "Uh oh! Something went wrong.", description: "Sorry, the name should not be empty!" })
-        toast({ title: "Wow! News.", description: "Data success update!!!" })
+        toast({ title: "Wow! News.", description: "Data success update!" })
         await getOne();
     }
 
@@ -44,7 +44,7 @@ export function EditOneTab() {
     return (
         <div className="w-full">
             <div className="flex items-center justify-between">
-                <p className="text-sm"> Bita bo'lim ma'lumotlarni yangilash</p>
+                <p className="text-sm"> Bo'lim ma'lumotlarni yangilash.</p>
             </div>
             <Separator className="my-4" />
             {load && <SkeletonV1 />}

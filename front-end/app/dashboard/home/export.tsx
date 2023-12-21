@@ -1,6 +1,7 @@
 "use client"
 
 import { downloadRequest } from "@/lib/request";
+import { Button } from "@/registry/ui/button";
 
 export function ExportTab() {
     const handleDownload = async () => {
@@ -16,13 +17,15 @@ export function ExportTab() {
         } catch (error) {
             console.error(error);
         }
-    };
+    }
 
     return (
         <div className="w-full">
             <div className="flex items-center justify-between">
-                <p className="text-sm">Bu sahifa hali bo'sh. kelajakda qo'llanma yozilishi kutilmoqda.</p>
-                <button onClick={handleDownload}>Download XLSX</button>
+                <div>
+                    <p>Shakilangan ma'lumotni ma'lum bir shakilda excel fayilda yuklab olish:</p>
+                    <Button onClick={handleDownload} className="m-2"> Barcha xodilarni yuklab olish(XLSX)</Button>
+                </div>
             </div>
         </div>
     )

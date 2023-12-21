@@ -7,15 +7,12 @@ export const metadata: Metadata = {
   title: "Admin panel - # Page",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children, }: { children: React.ReactNode; }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600&display=swap" rel="stylesheet" />
+      </head>
       <body>
         <ThemeProvider
           attribute="class"

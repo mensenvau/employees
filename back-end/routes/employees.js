@@ -59,7 +59,7 @@ router.post("/img", async (req, res, next) => {
         req.files.img.mv(path.join(__dirname, "../public/", `${md5(id)}.png`), async (err) => {
             try {
                 if (err) throw err
-                await updateQuery("UPDATE employees SET photo = ? WHERE id = ?", [`${id}.png`, id])
+                await updateQuery("UPDATE employees SET photo = ? WHERE id = ?", [`${md5(id)}.png`, id])
                 res.json({ message: "ok" })
             } catch (err) {
                 next(new Error(`File upload error, message: ${err.message}`))
